@@ -12,9 +12,6 @@ $('.owl-carousel_1').owlCarousel({
         0: {
             items: 1
         },
-        768: {
-            items: 2
-        },
         1170: {
             items: 3
         }
@@ -35,19 +32,15 @@ $('.owl-carousel_2').owlCarousel({
         0: {
             items: 1
         },
-        768: {
-            items: 2
-        },
         1170: {
             items: 3
         }
     }
 });
 
-$('.navTrigger').click(function () {
-    $(this).toggleClass('active');
-    console.log("Clicked menu");
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
+var trigger = document.getElementById('toggle');
+var box = document.getElementById('menu');
 
+toggle.addEventListener('click', function() {
+    box.classList.toggle('active');
 });

@@ -18,41 +18,59 @@
 <body>
 
 <header>
-    <nav class="nav">
-        <div class="container container_header">
+    <div class="container container_header">
+        <div class="header d-flex justify-content">
             <div class="logo">
                 <a href="#" class="header_logo">
                     <img src="img/logo_healthcare.svg" alt="logo">
                 </a>
             </div>
-            <div id="mainListDiv" class="main_list">
-                <ul class="navlinks">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Article</a></li>
-                    <li><a href="#">Services</a></li>
+            <div class="nav">
+                <ul>
+                    <li><a class="a" href="#">Home</a></li>
+                    <li><a class="a" href="#">About</a></li>
+                    <li><a class="a" href="#">Article</a></li>
+                    <li><a class="a" href="#">Services</a></li>
                     <li><a class="a_btn" href="#">Get Started</a></li>
                 </ul>
             </div>
-            <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
         </div>
-    </nav>
+        <div class="burger justify-content">
+            <div class="logo">
+                <a href="#" class="header_logo">
+                    <img src="img/logo_healthcare.svg" alt="logo">
+                </a>
+            </div>
+            <div id="menu" >
+                <ul>
+                    <li><a class="a" href="#">Home</a></li>
+                    <li><a class="a" href="#">About</a></li>
+                    <li><a class="a" href="#">Article</a></li>
+                    <li><a class="a" href="#">Services</a></li>
+                    <li><a class="a_btn" href="#">Get Started</a></li>
+                </ul>
+            </div>
+            <div id="toggle">
+                <input type="checkbox">
+                <span></span>
+            </div>
+        </div>
+    </div>
 </header>
 
 <main>
 
     <section class="home">
-        <div class="home_container">
+        <div class="container">
+            <img src="img/img_home.png" alt="img">
             <h1>Find And Search Your <span class="h1_span"> Suitable Doctor’s</span></h1>
             <p>
                 Join us and take care of yourself and your family with health services that will make you feel confident and safe in your daily life.
             </p>
             <form class="form_home">
-                <input id="search" type="text" placeholder="Find your doctor">
+                <div class="form_home_find">
+                    <input id="search" type="text" placeholder="Find your doctor">
+                </div>
                 <div class="form_home_select">
                     <label for="city"></label>
                     <select id="city" name="city">
@@ -63,12 +81,11 @@
                 </div>
                 <button type="button"></button>
             </form>
-            <img src="img/img_home.png" alt="img">
         </div>
     </section>
 
     <section class="steps">
-        <div class="steps_container">
+        <div class="container">
             <h2>
                 3 Easy Steps and Get Your Solution
             </h2>
@@ -93,7 +110,7 @@
     </section>
 
     <section class="best">
-        <div class="best_container_1">
+        <div class="container d-flex">
             <div class="best_container_2">
                 <h2>Best quality service with our experience
                     doctors</h2>
@@ -118,7 +135,7 @@
     </section>
 
     <section class="service">
-        <div class="service_container">
+        <div class="container">
             <h2>
                 Our Service
             </h2>
@@ -163,7 +180,7 @@
     </section>
 
     <section class="doctors">
-        <div class="doctors_container">
+        <div class="container d-flex">
             <h2>
                 Meet Our Certified Online Doctors
             </h2>
@@ -243,7 +260,7 @@
     </section>
 
     <section class="mobile">
-        <div class="mobile_container_1">
+        <div class="container d-flex">
             <div class="mobile_container_2">
                 <h2>Mobile apps are available
                     Get HealthCare for free!
@@ -265,7 +282,7 @@
     </section>
 
     <section class="reviews">
-        <div class="reviews_container">
+        <div class="container d-flex">
             <h2>
                 Look our Clients have to say about us
             </h2>
@@ -310,7 +327,7 @@
     </section>
 
     <section class="book">
-        <div class="book_container d-flex">
+        <div class="container d-flex">
             <div class="book_container_div">
                 <h2>It’s Time Change Your Life Today</h2>
                 <a class="a_btn" href="#">Book an Appoinment</a>
@@ -324,7 +341,7 @@
 
 <footer>
     <div class="footer">
-        <div class="footer_container">
+        <div class="container d-flex justify-content">
             <div class="footer_div_1">
                 <a href="#" class="footer_logo">
                     <img src="img/logo_healthcare.svg" alt="logo">
@@ -430,7 +447,9 @@
                     Sign up for tips, new destinations, and exclusive promos.
                 </p>
                 <form  class="footer_form">
-                    <input type="email" placeholder="Enter your email" class="footer_email">
+                    <div class="footer_email">
+                        <input type="email" placeholder="Enter your email">
+                    </div>
                     <button class="btn">Subscribe</button>
                 </form>
             </div>
