@@ -60,6 +60,9 @@ h1{
 
 .h1_span{
   color: $main_blue;
+  @include max-screen(495px){
+    color: $dark_grey;
+  }
 }
 
 h2{
@@ -127,13 +130,21 @@ p{
   }
 }
 
-
 header{
   position: absolute;
   width: 100%;
   z-index: 99;
+  @include max-screen(767px){
+    background-color: rgba(210, 231, 248, 0.6);
+    backdrop-filter: blur(20px);
+    position: fixed;
+  }
   .container{
     padding-top: 24px;
+    @include max-screen(767px){
+      padding-top: 16px;
+      padding-bottom: 24px;
+    }
     .header{
       .header_logo{
         position: relative;
@@ -207,14 +218,50 @@ header{
   background-image: url("../img/bg_home.png");
   background-size: cover;
   padding: 325px 0 193px;
-  position: relative;
+  @include max-screen(1300px){
+    padding: 200px 0 120px;
+  }
+  @include max-screen(1270px){
+    padding: 200px 0 90px;
+  }
+  @include max-screen(1150px){
+    padding: 180px 0 70px;
+  }
+  @include max-screen(1150px){
+    padding: 160px 0 60px;
+  }
   .container{
     position: relative;
+    @include max-screen(1150px){
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
     img{
       position: absolute;
       bottom: -193px;
       right: -104px;
       z-index: 2;
+      @include max-screen(1370px){
+        right: -74px;
+      }
+      @include max-screen(1320px){
+        right: -54px;
+      }
+      @include max-screen(1300px){
+        block-size: 140%;
+        right: 0;
+        bottom: -120px;
+      }
+      @include max-screen(1270px){
+        block-size: 120%;
+        right: 0;
+        bottom: -90px;
+      }
+      @include max-screen(1150px){
+        display: none;
+      }
     }
     p{
       font-size: 14px;
@@ -231,13 +278,25 @@ header{
     background: $white;
     border-radius: 8px;
     box-shadow: $shadow;
+    @include max-screen(580px){
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
     .form_home_select{
       position: relative;
+      @include max-screen(580px){
+        margin-bottom: 24px;
+      }
       &:before{
         content: url("../img/icons/icon_home_location.svg");
         position: absolute;
         top: 18px;
         left: 20px;
+        @include max-screen(580px){
+          left: 30px;
+        }
       }
       &:after{
         content: url("../img/icons/icon_home_arrow.svg");
@@ -245,9 +304,15 @@ header{
         top: 18px;
         right: 51px;
         pointer-events: none;
+        @include max-screen(580px){
+          right: 20px;
+        }
       }
     }
     .form_home_find{
+      @include max-screen(580px){
+        margin-bottom: 24px;
+      }
       input{
         background-color: rgba(245, 246, 250, 0.5);
         border-radius: 8px;
@@ -263,6 +328,10 @@ header{
         appearance: none;
         color: rgba(0, 0, 0, 0.3);
         margin-right: 19px;
+        @include max-screen(580px){
+          margin-right: 0;
+          width: 260px;
+        }
       }
     }
     .form_home_select{
@@ -281,6 +350,10 @@ header{
         appearance: none;
         color: $grey;
         margin-right: 31px;
+        @include max-screen(580px){
+          margin-right: 0;
+          width: 260px;
+        }
       }
     }
     button{
@@ -296,6 +369,9 @@ header{
       &:hover{
         opacity: 0.7;
       }
+      @include max-screen(580px){
+        width: 260px;
+      }
     }
   }
 }
@@ -304,17 +380,30 @@ header{
 
 .steps{
   padding: 86px 0 111px;
-  @include max-screen(980px){
-    padding: 46px 0 71px;
+  @include max-screen(1000px){
+    padding: 60px 0 60px;
   }
   .container{
     h2{
       margin-bottom: 61px;
       text-align: center;
     }
-    article{
-      max-width: 320px;
-      text-align: center;
+    .steps_articles{
+      width: 100%;
+      flex-wrap: wrap;
+      @include max-screen(1000px){
+        justify-content: center;
+      }
+      article{
+        max-width: 320px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include max-screen(1000px){
+          margin: 10px;
+        }
+      }
       h3{
         margin-bottom: 18px;
       }
@@ -328,21 +417,21 @@ header{
         border-radius: 50%;
         box-shadow: $shadow;
       }
+      }
     }
   }
-}
 
-//best gotovo
+//best
 
 .best{
   padding: 71px 0 73px;
-  @include max-screen(980px){
-    padding: 41px 0 53px;
+  @include max-screen(1000px){
+    padding: 60px 0 60px;
   }
   .container{
     justify-content: end;
     position: relative;
-    @include max-screen(980px){
+    @include max-screen(1000px){
       text-align: center;
       justify-content: center;
     }
@@ -351,11 +440,26 @@ header{
       bottom: -73px;
       left: -105px;
       z-index: 2;
-      @include max-screen(1100px){
-        block-size: 110%;
-        bottom: -23px;
+      @include max-screen(1370px){
+        left: -84px;
       }
-      @include max-screen(980px){
+      @include max-screen(1320px){
+        left: -54px;
+      }
+      @include max-screen(1300px){
+        left: -34px;
+      }
+      @include max-screen(1270px){
+        block-size: 100%;
+        left: 0;
+        bottom: -6px;
+      }
+      @include max-screen(1030px){
+        block-size: 90%;
+        left: 0;
+        bottom: 16px;
+      }
+      @include max-screen(1000px){
         display: none;
       }
     }
@@ -410,8 +514,8 @@ header{
 
 .service{
   padding: 143px 0 120px;
-  @include max-screen(980px){
-    padding: 63px 0 100px;
+  @include max-screen(1000px){
+    padding: 60px 0 120px;
   }
   .container{
     text-align: center;
@@ -427,10 +531,13 @@ header{
       margin: auto;
     }
     article{
-      max-width: 349px;
+      max-width: 348px;
       padding: 59px 62px 31px;
       background-color: $white;
       border-radius: 10px;
+      @include max-screen(400px){
+        padding: 59px 32px 31px;
+      }
       p{
         max-width: 224px;
         font-size: 14px;
@@ -447,10 +554,13 @@ header{
   }
 }
 
-//doctors
+//doctors +
 
 .doctors{
   padding-bottom: 120px;
+  @include max-screen(980px){
+    padding-bottom: 70px;
+  }
   .container{
     flex-direction: column;
     align-items: center;
@@ -460,6 +570,12 @@ header{
       display: block;
       position: absolute;
       top: 65px;
+      @include max-screen(664px){
+        top: 114px;
+      }
+      @include max-screen(376px){
+        top: 163px;
+      }
     }
     h2{
       margin-bottom: 47px;
@@ -476,8 +592,12 @@ header{
     }
     .doctors_items{
       width: 100%;
+      flex-wrap: wrap;
       margin-bottom: 58px;
-      .item{
+      @include max-screen(1200px){
+        justify-content: center;
+      }
+      article{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -487,6 +607,9 @@ header{
         padding: 10px 10px 27px 10px;
         box-sizing: border-box;
         box-shadow: $shadow;
+        @include max-screen(1200px){
+          margin: 10px;
+        }
         h4{
           margin-bottom: 2px;
           text-align: center;
@@ -516,13 +639,23 @@ header{
   }
 }
 
-//mobile
+//mobile +/-
 
 .mobile{
   padding: 206px 0 222px;
+  @include max-screen(1200px){
+    padding: 60px 0 122px;
+  }
+  @include max-screen(1000px){
+    padding: 60px 0 60px;
+  }
   .container{
     justify-content: end;
     position: relative;
+    @include max-screen(980px){
+      text-align: center;
+      justify-content: center;
+    }
     .mobile_container_2 {
       max-width: 508px;
       h2 {
@@ -536,13 +669,22 @@ header{
         margin-bottom: 45px;
       }
       .mobile_apps{
+        @include max-screen(339px){
+          display: flex;
+          flex-direction: column;
+        }
         a{
           transition: 1s;
+          display: inline-block;
           &:hover {
             opacity: 0.6;
           }
           &:first-of-type{
             margin-right: 10px;
+            @include max-screen(339px){
+              margin-bottom: 30px;
+              margin-right: 0;
+            }
           }
         }
       }
@@ -552,14 +694,31 @@ header{
       bottom: -222px;
       left: -248px;
       z-index: 2;
+      @include max-screen(1520px){
+        left: -200px;
+      }
+      @include max-screen(1370px){
+        left: -100px;
+      }
+      @include max-screen(1200px){
+        block-size: 200%;
+        left: -80px;
+        bottom: -182px;
+      }
+      @include max-screen(1000px){
+        display: none;
+      }
     }
   }
 }
 
-//reviews
+//reviews +
 
 .reviews{
   padding: 120px 0 93px;
+  @include max-screen(980px){
+    padding: 60px 0 60px;
+  }
   .container{
     flex-direction: column;
     position: relative;
@@ -618,10 +777,13 @@ header{
   }
 }
 
-//book
+//book +
 
 .book{
   padding: 105px 0 123px;
+  @include max-screen(980px){
+    padding: 60px 0 60px;
+  }
   .container{
     position: relative;
     background-color: $main_blue;
@@ -629,13 +791,26 @@ header{
     background-image: url("../img/bg_book.png");
     padding: 82px 118px 107px;
     box-sizing: border-box;
+    @include max-screen(980px){
+      padding: 82px 78px 107px;
+    }
+    @include max-screen(940px){
+      justify-content: center;
+      padding: 82px 16px 107px;
+    }
     img{
       position: absolute;
       bottom: 0;
       right: 48px;
       z-index: 2;
+      @include max-screen(940px){
+        display: none;
+      }
     }
     .book_container_div{
+      @include max-screen(940px){
+        text-align: center;
+      }
       h2{
         color: $white;
         max-width: 400px;
@@ -653,7 +828,7 @@ header{
   }
 }
 
-//footer
+//footer +
 
 footer{
   .footer{
@@ -662,7 +837,19 @@ footer{
     padding-top: 34px;
     padding-bottom: 30px;
     .container{
+      flex-wrap: wrap;
+      @include max-screen(488px){
+        justify-content: center;
+      }
       .footer_div_1{
+        @include max-screen(900px){
+          margin-right: 15px;
+        }
+        @include max-screen(488px){
+          margin: 0 16px 0;
+          text-align: center;
+          padding-bottom: 32px;
+        }
         .footer_logo{
           height: 47px;
           display: inline-block;
@@ -672,10 +859,21 @@ footer{
           max-width: 300px;
           line-height: 180%;
           margin-bottom: 16px;
+          &:last-of-type{
+            @include max-screen(778px){
+              margin-bottom: 67px;
+            }
+            @include max-screen(488px){
+              margin-bottom: 16px;
+            }
+          }
         }
         .footer_social{
           ul{
             display: flex;
+            @include max-screen(488px){
+              justify-content: center;
+            }
             li{
               a{
                 display: inline-block;
@@ -689,6 +887,15 @@ footer{
           }
         }
       }
+      .h4_footer{
+        font-family: $main_font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        color: #323232;
+        margin-bottom: 24px;
+      }
       .footer_div_2{
         display: flex;
         justify-content: space-between;
@@ -696,14 +903,14 @@ footer{
           display: flex;
           flex-direction: column;
           margin-right: 113px;
-          .h4_footer{
-            font-family: $main_font;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 16px;
-            color: #323232;
-            margin-bottom: 24px;
+          @include max-screen(1000px){
+            margin-right: 50px;
+          }
+          @include max-screen(900px){
+            margin-right: 15px;
+          }
+          @include max-screen(778px){
+            margin-right: 30px;
           }
           ul{
             li{
@@ -716,11 +923,22 @@ footer{
         }
         .footer_div_2_div2{
           margin-right: 0;
+          @include max-screen(900px){
+            margin-right: 15px;
+          }
+          @include max-screen(778px){
+            margin-right: 0;
+          }
         }
       }
       .footer_div_3{
         display: flex;
         flex-direction: column;
+        @include max-screen(778px){
+          margin: auto;
+          text-align: center;
+          padding-top: 32px;
+        }
         .p_footer{
           max-width: 290px;
           line-height: 180%;
@@ -766,12 +984,25 @@ footer{
   }
   .footer_after{
     padding: 27px 0 36px;
-    .footer_after_container{
+    .container{
       max-width: 1170px;
       margin: auto;
+      @include max-screen(427px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .footer_after_div{
         li{
           margin-left: 54px;
+          @include max-screen(488px){
+            margin-left: 24px;
+          }
+          &:first-of-type{
+            @include max-screen(427px){
+              margin-left: 0;
+            }
+          }
         }
       }
     }
@@ -783,6 +1014,11 @@ footer{
     font-size: 14px;
     line-height: 14px;
     color: $grey;
+  }
+  .p_footer{
+    @include max-screen(427px){
+      padding-bottom: 16px;
+    }
   }
   .a_footer{
     transition: 1s;
@@ -823,7 +1059,7 @@ footer{
     }
     &:after{
       content: "";
-      width: 349px;
+      width: 348px;
       height: 18px;
       background: #40A3F8;
       opacity: 0;
@@ -833,6 +1069,9 @@ footer{
       left: auto;
       margin: 0 20px;
       transition: 1s;
+      @include max-screen(400px){
+        max-width: 288px;
+      }
     }
   }
   .owl-dots{
@@ -862,7 +1101,7 @@ footer{
     opacity: 1;
     &:after{
       content: "";
-      width: 349px;
+      width: 348px;
       height: 18px;
       background: #40A3F8;
       opacity: 0.5;
@@ -888,6 +1127,9 @@ footer{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
+    @include max-screen(520px){
+      margin: 0 5px;
+    }
     img {
       width: fit-content;
       display: inline-block;
@@ -969,12 +1211,19 @@ footer{
   }
 }
 
-//navbar
+//burger
 
 .burger{
   display: none;
   @media only screen and (max-width: 767px) {
     display: flex;
+  }
+  .logo{
+    position: relative;
+    .header_logo{
+      position: fixed;
+      z-index: 10;
+    }
   }
   #menu {
     background: #1E1E1E;
@@ -988,9 +1237,8 @@ footer{
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    border-radius: 3px;
     transition: 1s;
-    position: absolute;
+    position: fixed;
     top: -100vh;
     left: 0;
     z-index: 9;
@@ -1040,14 +1288,14 @@ footer{
   }
   #toggle {
     position: relative;
-    width: 40px;
-    height: 36px;
+    width: 30px;
+    height: 35px;
     left: 0;
-    top: 15px;
+    top: 10px;
     transition: 2s;
     z-index: 10;
     input {
-      position: absolute;
+      position: fixed;
       top: -3px;
       left: -3px;
       width: 100%;
@@ -1056,7 +1304,6 @@ footer{
       opacity: 0;
       cursor: pointer;
       &:checked {
-        position: fixed;
         + span {
           background: transparent;
           left: 0;
@@ -1097,9 +1344,3 @@ footer{
     }
   }
 }
-
-
-
-
-
-

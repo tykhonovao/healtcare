@@ -38,6 +38,7 @@ $('.owl-carousel_2').owlCarousel({
     }
 });
 
+
 var trigger = document.getElementById('toggle');
 var box = document.getElementById('menu');
 
